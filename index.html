@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#1coffee.ng</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="greeting"></div>
+    <nav class="nav">
+        <div class="logo">
+            <img src="./img/profile.png" alt="">
+        </div>
+        <div class="menu-bar">
+        <i class="bx bx-menu-alt-right" id="menu"></i>
+        <ul class="ul">
+            <li><a href="">Available flavors</a></li>
+            <li><a href="">Automate delivery</a></li>
+            <li><a href="">Order a cup of coffee</a></li>
+            <li><a href="">Contact Us</a></li>
+        </ul>  
+        </div>
+       <!-- <a href=""><i id="wat" title="fund wallet" style="font-size: 31px; color: rgb(230, 107, 62); margin: 7px; " class="bx bx-wallet"></i></a>--> 
+       <div class="cart">
+       <a href=""><i id="wallet" title="add to cart" class="bx bxs-cart"></i></a>
+       <span id="cart-count" class="cart-count">0</span>
+       </div>
+
+        <div class="circled-container" title="My Account">
+            <img src="./img/testimonial-1.jpg" alt="profile pic" id="profile-pic" onclick="toggleFeatures()" >
+            <div id="features">
+                <ul>
+                <li>place an order</li>
+                <li>See Cart</li>
+                <li>settings</li>
+                <li>Sign out</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="call">
+        <i class="bx bxs-phone-call"><a href=""></a></i>
+    </div>
+
+    <div class="jack">
+        <div class="slide">
+        <img class="moving-image" src="./img/caff.jpeg" alt="">
+        <div class="overlay"></div>
+        <div class="text">
+          <h2>"A cup of coffee makes your day splendid"</h2>
+          <button id="order" onclick="orderNow"><span></span>Order a cup of coffee</button>
+        </div>
+        </div>
+        <div class="slide">
+        <img class="moving-image" src="./img/cafe.jpeg" alt="">
+        <div class="overlay"></div>
+        <div class="text">
+            <h2>"Get energized to start your day"</h2>
+            <button id="order" onclick="orderNow"><span></span>Order a cup of coffee</button>
+          </div>
+        </div>
+        <div class="slide">
+        <img class="moving-image" src="./img/caf.jpeg" alt="">
+        <div class="overlay"></div>
+        <div class="text">
+            <h2>"Start your day with a cup of pure bliss"</h2>
+            <button id="order" onclick="orderNow"><span></span>Order a cup of coffee</button>
+          </div>
+        </div>
+        <div class="slide">
+         <img class="moving-image" src="./img/cafee.jpeg" alt="">
+         <div class="overlay"></div>
+         <div class="text">
+            <h2>"Indulge in the rich flavors, one sip at a time"</h2>
+            <button id="order" onclick="orderNow"><span></span>Order a cup of coffee</button>
+          </div>
+        </div>
+    </div>
+    <main class="main">
+        <h3 class="tet">Premium Orders</h3>
+    <section class="section">
+       <!-- <button class="left" onclick="plusDiv(-1)">&#10094;</button>
+        <button class="right" onclick="plusDiv(+1)">&#10095;</button>
+         --> 
+       <div class="flavors">
+                <img src="./img/cooof.jpg" alt="">
+                <i class="bx bx-plus" title="add to cart" id="plus-sign"></i>
+                <div class="like-button" onclick="likeImage()">&#x2661;</div>
+                <div class="hover">
+                    <h3>Coffee Rainne</h3>
+                    <h4>$40.99 <s style="color: red; font-size: 10px;">$43.99</s></h4>
+                    <button onclick="buyNow()">Buy Now <span></span></button>
+                </div>
+        </div>
+            <div class="flavors">
+                    <img src="./img/coffe.jpg" alt="">
+                    <i class="bx bx-plus" title="add to cart" id="plus-sign"></i>
+                    <div class="like-button" onclick="likeImage()">&#x2661;</div>
+                    <div class="hover">
+                        <h3>Coffee Arabian</h3>
+                        <h4>$53.99 <s style="color: red; font-size: 10px;">$57.99</s></h4>
+                        <button onclick="buyNow()">Buy Now <span></span></button>
+                    </div>
+            </div>
+        <div class="flavors">
+                <img src="./img/cooff.jpg" alt="">
+                <i class="bx bx-plus" title="add to cart" id="plus-sign"></i>
+                <div class="like-button" onclick="likeImage()">&#x2661;</div>
+                <div class="hover">
+                    <h3>Coffee Maargarita</h3>
+                    <h4>$47.99 <s style="color: red; font-size: 10px;">$50.99</s></h4>
+                    <button onclick="buyNow()">Buy Now <span></span></button>
+                </div>
+        </div>
+    </section>
+
+    <div style=" margin-top: 100px; margin-bottom: 50px;" class="offers">
+        <h2 class="zoom-text" id="zoomed-text">EXCLUSIVE OFFERS!!!</h2>
+       <h4> Refer a friend to get 3% discount on your next order.<i class="bx bxs-happy-heart-eyes" id="happy"></i></h4>
+       <p>share via:</p>
+       <p class="socials">
+        <img class="padding" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA0ElEQVRIS2NkoDFgpLH5DIPOAm2gj9uB2BiIRYD4GRAvA+JqXCFBig9EgYY8AGIuNMPWAPmh1LBgEtCQXCwGUc2CM9CgAdmxCIgTgPg/oURCShC9hoY7yMwsIJ5OyHCQPCkWvAGqF4YamgakZ1PDgjCgIVpQg8qANCeUvRlIn4OyjwLp3eRGMigCgwm4tBAoP4GWFgQADd9IrgWNQI32UM1WQJoVyr4FpJ8jxQeIjxWQEsnIqYhqkYzsqlELCGab0SAa+CAi6AJsCkjJaIPTAgBeYyoZrk+g6AAAAABJRU5ErkJggg=="/>
+        <img class="padding" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABkklEQVRIS92VPSiFURjH7yXloywsPgYGkULKZLEYSImiGHyMStlEVpMyMZAJiytZZLKQj0kMwkYoZSKDpITfX++t0+u8x/veepd76te993me8/zP85yPm0zEPJIx509kn0ARLXsL0bZuYmahFj5hGaahHHphAb6Vx2xRLr+voR8uHCJj+JYs/gdsFTAEG2m/KVCN8RaevVUcWpKUeTH5AQs4w74Pq3Dlr6AAwyvkeeWt8Kk2PBrJ+vi+5ahO7R2HNVsFsp1Aq5FAfTyCHTiFRlh0CKzjGzH9ZosKcdTBHpQ4krhc8zgngwQqcdzBC5RmKDDhr9CsIAfnDVRlmFzTGuAyqALZdYY3QRsdddzbFmd7KgYI1KVpiqjwpz2abxPowr4bMbmOcg28++cFPXY6x8MhRb6Ia4NjW3yQgDa8HmZg0CGke6KLZXs6fqfZBPTgtcAUdDqSf+AbhZSrUlOgncA5aA4QNvPodiu53i7n8FdQTLSOag90gB41rfQJtJEHsA3n/yVO+7PvHy1s5aHjYm/RDzGqPxntJF5VAAAAAElFTkSuQmCC"/>
+        <img class="padding" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACQklEQVRIS82VXWjPURjHt7GLLc3b1YbkpSTlZTOJXKC40S5kGEvcyUjUKBe74kZbSZSSslLKS9Jy42WFaZSGi60pL0NWLuRiWLHM56Pzr7+f3+/Mzb926tP5/c9zzvme5znPef7FRQVuxQXev2hcCNTg5RZYC/NhBB5DN9yBnlgUYh7MYuF52Bg2eEL/DH7CYlgCk+E0HIEfaUJZAnOZ3AVlYYOL9G9TNmhirA3eQD30JuekCUwPbpfSr4P+WAiwLYKbMDF8f8ufnyZwlQkbYAW8hBlhwceIkOF6Chdgb0xgKUbj3AytsCB484l+HoxGRI5hOwHroTM3L+mBE46Cl6erh8EY2+qgIyLgfX0Fw7U5S+AhhgmwKkzwEs+E7x30lyMCml4EuyH705IeDDD2CHYGexW9GTIEs+H7GAKmdSPoTarAK0a9rO15Gx3g21y/Blshdg8nsR8CMzBV4DajU6E2cdLr/Dau9g0wB87BIByEz2H+lbBWe6rAcUa95Jlg5uSa93IK9oMhmwLTglHvFDHcX+AG7MkSMM6+WIVa8gRyn9ajs7AwDFg21oBlxHu7BJvgVpaA48/hF1SnCOSGtFXAB3gNJoN39x5W5q9LZlE5Rt30lL6B/2mG8x4YsuXwLiagez6m3aD7VlLLcjsMJ9Qq+b0LjL9pad2yCvzVkh548n1hhunYB5YIS/F9GADHl8FqKAFD44H+qaTukxR4wJgF7m7A9JsE28Aa4ws3jZ3jgzRjXJPZxsVfZuyAY9oK7sFvQv1uGcVPTUoAAAAASUVORK5CYII="/>
+        <img class="padding" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACQklEQVRIS8WVTUhWQRSGP7UEXUlYrTREhETRMgRDiwIJw0VmSFJGG5EWkYKIiyLByIUQGS505SYrF9Gv4KbI8GejJVGUUoIKbhRRyJXZz/PKXBmnb+xCfDjwMHdmzsw5Z86Zc+MiMW5xMT4/smMKMvGsEYohF+I9nv5i/hMMwT346spF8+CKEd5FP2f4Tf8DPsOydchhvg9BOqxBPXTbSlwFeSy+gyk4A9MhY5SD3HPIgAL4EOxzFTxh4TQchNkQh6cg8xTewjNjnBRV+hTMsPDFKLHPT2AgKxUTXZ1kXkM+TBgFJ+jHYB8c8ClYZeEh1FmnJ5vDihyPRhifh70gw1ZA3pRBkk+BgtkJ14yAsucNHIe70AXf4RS0wzc4Btqn9gAugPZtzLkx0KTSrcFsOEo/Ci3QGlhlelnfB7pvWa52H2pA1/gzmgJNdkCT2aBDr4PudclRsIfxItyGm2ath/4S7Aa9kX96cAuZG7AfFhwFqUZBmzHC9kBJ4VVgx0BZMwzNoDu3WzWDR3AWlKJqvXARvAp0RQrkVbNBgq9AgbwMA5AIpXAHFOQSCB1kpakCV2uZqjQdhMKtDkSCNJ235h/zXQ7eNFWxUnlQLttNWXESqkCZ9wL6LcsD2XE+FK+0YMJNUz0y3WnYUmEbEbxqKa/wKZDQe/gI54w3jjNRh9nMvgSVCL14FcyNtl251mtUbVHJnrSO1RVkga5NTTE6AuugB6ok2Wy+P5oOUG1X9oT94aiU/FXed+yXaXv5X98x9+AP5C96GSbc3FEAAAAASUVORK5CYII="/>
+       </p>
+        </div>
+
+        <h3 class="tet" style="margin-bottom: 18px;">Coffee Variants</h3>
+        <section class="sect">
+
+                <div class="product">
+                    <img src="./img/coof.jpg" alt="">
+                        <i class="bx bx-plus" title="add to cart" id="plus-sign"></i>
+                        <div class="like-button" onclick="likeImage()">&#x2661;</div>
+                        <div class="hov">
+                            <h3>Latte</h3>
+                            <h4>$64.99 <s style="color: red; font-size: 10px;">$67.99</s></h4>
+                            <button onclick="buyNow()">Buy Now <span></span></button>
+                        </div>
+                </div>
+
+                <div class="product">
+                    <img src="./img/coffe.jpg" alt="">
+                       <i class="bx bx-plus" title="add to cart" id="plus-sign"></i>
+                       <div class="like-button" onclick="likeImage()">&#x2661;</div>
+                       <div class="hov">
+                        <h3>Americano</h3>
+                        <h4>$43.99 <s style="color: red; font-size: 10px;">$45.99</s></h4>
+                        <button onclick="buyNow()">Buy Now <span></span></button>
+                    </div>
+                </div>
+                <div class="product">
+                        <img src="./img/cooff.jpg" alt="">
+                        <i class="bx bx-plus" title="add to cart" id="plus-sign"></i>
+                        <div class="like-button" onclick="likeImage()">&#x2661;</div>
+                        <div class="hov">
+                            <h3>Chinese Coffee</h3>
+                            <h4>$83.99 <s style="color: red; font-size: 10px;">$87.99</s></h4>
+                            <button onclick="buyNow()">Buy Now <span></span></button>
+                        </div>
+                    </div>
+                <div class="product">
+                        <img src="./img/coffe.jpg" alt="">
+                        <i class="bx bx-plus" title="add to cart" id="plus-sign"></i>
+                        <div class="like-button" onclick="likeImage()">&#x2661;</div>
+                        <div class="hov">
+                            <h3>Mocha</h3>
+                            <h4>$23.99 <s style="color: red; font-size: 10px;">$27.99</s></h4>
+                            <button onclick="buyNow()">Buy Now <span></span></button>
+                        </div>
+                    </div>
+                    <div class="product">
+                            <img src="./img/cofff.jpg" alt="">
+                            <i class="bx bx-plus" title="add to cart" id="plus-sign"></i>
+                            <div class="like-button" onclick="likeImage()">&#x2661;</div>
+                            <div class="hov">
+                                <h3>Flat white</h3>
+                                <h4>$63.99 <s style="color: red; font-size: 10px;">$67.99</s></h4>
+                                <button onclick="buyNow()">Buy Now <span></span></button>
+                            </div>
+                        </div>
+                <div class="product">
+                        <img src="./img/cof.jpg" alt="">
+                        <i class="bx bx-plus" title="add to cart" id="plus-sign"></i>
+                        <div class="like-button" onclick="likeImage()">&#x2661;</div>
+                        <div class="hov">
+                            <h3>French Press</h3>
+                            <h4>$53.99 <s style="color: red; font-size: 10px;">$57.99</s></h4>
+                            <button onclick="buyNow()">Buy Now <span></span></button>
+                        </div>
+                    </div>
+                <div class="product">
+                        <img src="./img/cooof.jpg" alt="">
+                        <i class="bx bx-plus" title="add to cart" id="plus-sign"></i>
+                        <div class="like-button" onclick="likeImage()">&#x2661;</div>
+                        <div class="hov">
+                            <h3>Cold brew</h3>
+                            <h4>$43.99 <s style="color: red; font-size: 10px;">$39.99</s></h4>
+                            <button onclick="buyNow()">Buy Now <span></span></button>
+                        </div>
+                    </div>
+                    <div class="product">
+                            <img src="./img/coffe.jpg" alt="">
+                            <i class="bx bx-plus" title="add to cart" id="plus-sign"></i>
+                            <div class="like-button" onclick="likeImage()">&#x2661;</div>
+                            <div class="hov">
+                                <h3>Coffee Arabian</h3>
+                                <h4>$53.99 <s style="color: red; font-size: 10px;">$57.99</s></h4>
+                                <button onclick="buyNow()">Buy Now <span></span></button>
+                            </div>
+                        </div>
+                    <div class="product">
+                            <img src="./img/coff.jpg" alt="">
+                            <i class="bx bx-plus" title="add to cart" id="plus-sign"></i>
+                            <div class="like-button" onclick="likeImage()">&#x2661;</div>
+                            <div class="hov">
+                                <h3>Cold Brew</h3>
+                                <h4>$73.99 <s style="color: red; font-size: 10px;">$77.99</s></h4>
+                                <button onclick="buyNow()">Buy Now <span></span></button>
+                            </div>
+                        </div>
+                    <div class="product">
+                            <img src="./img/cooff.jpg" alt="">
+                            <i class="bx bx-plus" title="add to cart" id="plus-sign"></i>
+                            <div class="like-button" onclick="likeImage()">&#x2661;</div>
+                            <div class="hov">
+                                <h3>Turkish Coffee</h3>
+                                <h4>$93.99 <s style="color: red; font-size: 10px;">$97.99</s></h4>
+                                <button onclick="buyNow()">Buy Now <span></span></button>
+                            </div>
+                        </div>
+                    <div class="product">
+                            <img src="./img/cofff.jpg" alt="">
+                            <i class="bx bx-plus" title="add to cart" id="plus-sign"></i>
+                            <div class="like-button" onclick="likeImage()">&#x2661;</div>
+                            <div class="hov">
+                                <h3>Flat white</h3>
+                                <h4>$33.99 <s style="color: red; font-size: 10px;">$38.99</s></h4>
+                                <button onclick="buyNow()">Buy Now <span></span></button>
+                            </div>
+                        </div>
+                <div class="product">
+                    <img src="./img/cof.jpg" alt="">
+                        <i class="bx bx-plus" title="add to cart" id="plus-sign"></i>
+                        <div class="like-button" onclick="likeImage()">&#x2661;</div>
+                        <div class="hov">
+                            <h3>Macchiato</h3>
+                            <h4>$53.99 <s style="color: red; font-size: 10px;">$57.99</s></h4>
+                            <button onclick="buyNow()">Buy Now <span></span></button>
+                        </div>
+                </div>
+                <div class="product">
+                        <img src="./img/cof.jpg" alt="">
+                        <i class="bx bx-plus" title="add to cart" id="plus-sign"></i>
+                        <div class="like-button" onclick="likeImage()">&#x2661;</div>
+                        <div class="hov">
+                            <h3>Mocha</h3>
+                            <h4>$40.99 <s style="color: red; font-size: 10px;">$45.99</s></h4>
+                            <button onclick="buyNow()">Buy Now <span></span></button>
+                        </div>
+                    </div>
+                <div class="product">
+                        <img src="./img/cooof.jpg" alt="">
+                        <div class="like-button" onclick="likeImage()">&#x2661;</div>
+                        <div class="hov">
+                            <h3> Espresso</h3>
+                            <h4>$63.99 <s style="color: red; font-size: 10px;">$67.99</s></h4>
+                            <button onclick="buyNow()">Buy Now <span></span></button>
+                        </div>
+                    </div>
+                <div class="product">
+                        <img src="./img/coffe.jpg" alt="">
+                        <div class="like-button" onclick="likeImage()">&#x2661;</div>
+                        <div class="hov">
+                            <h3>Cappuccino</h3>
+                            <h4>$33.99 <s style="color: red; font-size: 10px;">$37.99</s></h4>
+                            <button onclick="buyNow()">Buy Now <span></span></button>
+                        </div>
+                    </div>
+                <div class="product">
+                        <img src="./img/coof.jpg" alt="">
+                        <i class="bx bx-plus" title="add to cart" id="plus-sign"></i>
+                        <div class="like-button" onclick="likeImage()">&#x2661;</div>
+                        <div class="hov">
+                            <h3>Latte</h3>
+                            <h4>$53.99 <s style="color: red; font-size: 10px;">$57.99</s></h4>
+                            <button onclick="buyNow()">Buy Now <span></span></button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="./img/cof.jpg" alt="">
+                        <i class="bx bx-plus" title="add to cart" id="plus-sign"></i>
+                        <div class="like-button" onclick="likeImage()">&#x2661;</div>
+                        <div class="hov">
+                            <h3>Coffee Arabian</h3>
+                            <h4>$53.99 <s style="color: red; font-size: 10px;">$57.99</s></h4>
+                            <button onclick="buyNow()">Buy Now <span></span></button>
+                        </div>
+                    </div>
+                <div class="product">
+                        <img src="./img/cooof.jpg" alt="">
+                        <i class="bx bx-plus" title="add to cart" id="plus-sign"></i>
+                        <div class="like-button" onclick="likeImage()">&#x2661;</div>
+                        <div class="hov">
+                            <h3>Americano</h3>
+                            <h4>$33.99 <s style="color: red; font-size: 10px;">$7.99</s></h4>
+                            <button onclick="buyNow()">Buy Now <span></span></button>
+                        </div>
+                    </div>
+        </section>
+        <!--  <div class="popup">
+            <p>Added to cart</p>
+            <i class="bx bxs-dislike"></i>
+            Love our products, don't hesitate to rate us <i class="bx bxs-smile"></i>
+        </div>  
+          -->
+    <div class="buttn">
+    <button id="order" style="color: brown;"><span></span>See More</button>
+    </div>
+
+    <div class="offers">
+        <h2 class="zoom-text" id="zoomed-text">EXCLUSIVE OFFERS!!!</h2>
+       <h4> Refer a friend to get 3% discount on your next order.<i class="bx bxs-happy-heart-eyes"></i></h4>
+       <p>share via:</p>
+       <p class="socials">
+        <img style="padding: 3px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA0ElEQVRIS2NkoDFgpLH5DIPOAm2gj9uB2BiIRYD4GRAvA+JqXCFBig9EgYY8AGIuNMPWAPmh1LBgEtCQXCwGUc2CM9CgAdmxCIgTgPg/oURCShC9hoY7yMwsIJ5OyHCQPCkWvAGqF4YamgakZ1PDgjCgIVpQg8qANCeUvRlIn4OyjwLp3eRGMigCgwm4tBAoP4GWFgQADd9IrgWNQI32UM1WQJoVyr4FpJ8jxQeIjxWQEsnIqYhqkYzsqlELCGab0SAa+CAi6AJsCkjJaIPTAgBeYyoZrk+g6AAAAABJRU5ErkJggg=="/>
+        <img style="padding: 3px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABkklEQVRIS92VPSiFURjH7yXloywsPgYGkULKZLEYSImiGHyMStlEVpMyMZAJiytZZLKQj0kMwkYoZSKDpITfX++t0+u8x/veepd76te993me8/zP85yPm0zEPJIx509kn0ARLXsL0bZuYmahFj5hGaahHHphAb6Vx2xRLr+voR8uHCJj+JYs/gdsFTAEG2m/KVCN8RaevVUcWpKUeTH5AQs4w74Pq3Dlr6AAwyvkeeWt8Kk2PBrJ+vi+5ahO7R2HNVsFsp1Aq5FAfTyCHTiFRlh0CKzjGzH9ZosKcdTBHpQ4krhc8zgngwQqcdzBC5RmKDDhr9CsIAfnDVRlmFzTGuAyqALZdYY3QRsdddzbFmd7KgYI1KVpiqjwpz2abxPowr4bMbmOcg28++cFPXY6x8MhRb6Ia4NjW3yQgDa8HmZg0CGke6KLZXs6fqfZBPTgtcAUdDqSf+AbhZSrUlOgncA5aA4QNvPodiu53i7n8FdQTLSOag90gB41rfQJtJEHsA3n/yVO+7PvHy1s5aHjYm/RDzGqPxntJF5VAAAAAElFTkSuQmCC"/>
+        <img style="padding: 3px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACQklEQVRIS82VXWjPURjHt7GLLc3b1YbkpSTlZTOJXKC40S5kGEvcyUjUKBe74kZbSZSSslLKS9Jy42WFaZSGi60pL0NWLuRiWLHM56Pzr7+f3+/Mzb926tP5/c9zzvme5znPef7FRQVuxQXev2hcCNTg5RZYC/NhBB5DN9yBnlgUYh7MYuF52Bg2eEL/DH7CYlgCk+E0HIEfaUJZAnOZ3AVlYYOL9G9TNmhirA3eQD30JuekCUwPbpfSr4P+WAiwLYKbMDF8f8ufnyZwlQkbYAW8hBlhwceIkOF6Chdgb0xgKUbj3AytsCB484l+HoxGRI5hOwHroTM3L+mBE46Cl6erh8EY2+qgIyLgfX0Fw7U5S+AhhgmwKkzwEs+E7x30lyMCml4EuyH705IeDDD2CHYGexW9GTIEs+H7GAKmdSPoTarAK0a9rO15Gx3g21y/Blshdg8nsR8CMzBV4DajU6E2cdLr/Dau9g0wB87BIByEz2H+lbBWe6rAcUa95Jlg5uSa93IK9oMhmwLTglHvFDHcX+AG7MkSMM6+WIVa8gRyn9ajs7AwDFg21oBlxHu7BJvgVpaA48/hF1SnCOSGtFXAB3gNJoN39x5W5q9LZlE5Rt30lL6B/2mG8x4YsuXwLiagez6m3aD7VlLLcjsMJ9Qq+b0LjL9pad2yCvzVkh548n1hhunYB5YIS/F9GADHl8FqKAFD44H+qaTukxR4wJgF7m7A9JsE28Aa4ws3jZ3jgzRjXJPZxsVfZuyAY9oK7sFvQv1uGcVPTUoAAAAASUVORK5CYII="/>
+        <img style="padding: 3px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACQklEQVRIS8WVTUhWQRSGP7UEXUlYrTREhETRMgRDiwIJw0VmSFJGG5EWkYKIiyLByIUQGS505SYrF9Gv4KbI8GejJVGUUoIKbhRRyJXZz/PKXBmnb+xCfDjwMHdmzsw5Z86Zc+MiMW5xMT4/smMKMvGsEYohF+I9nv5i/hMMwT346spF8+CKEd5FP2f4Tf8DPsOydchhvg9BOqxBPXTbSlwFeSy+gyk4A9MhY5SD3HPIgAL4EOxzFTxh4TQchNkQh6cg8xTewjNjnBRV+hTMsPDFKLHPT2AgKxUTXZ1kXkM+TBgFJ+jHYB8c8ClYZeEh1FmnJ5vDihyPRhifh70gw1ZA3pRBkk+BgtkJ14yAsucNHIe70AXf4RS0wzc4Btqn9gAugPZtzLkx0KTSrcFsOEo/Ci3QGlhlelnfB7pvWa52H2pA1/gzmgJNdkCT2aBDr4PudclRsIfxItyGm2ath/4S7Aa9kX96cAuZG7AfFhwFqUZBmzHC9kBJ4VVgx0BZMwzNoDu3WzWDR3AWlKJqvXARvAp0RQrkVbNBgq9AgbwMA5AIpXAHFOQSCB1kpakCV2uZqjQdhMKtDkSCNJ235h/zXQ7eNFWxUnlQLttNWXESqkCZ9wL6LcsD2XE+FK+0YMJNUz0y3WnYUmEbEbxqKa/wKZDQe/gI54w3jjNRh9nMvgSVCL14FcyNtl251mtUbVHJnrSO1RVkga5NTTE6AuugB6ok2Wy+P5oOUG1X9oT94aiU/FXed+yXaXv5X98x9+AP5C96GSbc3FEAAAAASUVORK5CYII="/>
+       </p>
+        </div>
+    <i class='bx bxs-up-arrow-circle' id="scrollToTop" style="font-size:52px; cursor: pointer; color:rgb(100, 24, 24); "><a href="#profile"></a></i>
+    <div class="comment">
+        <h3 class="tet">Suggestion/ Comment</h3>
+        <div class="name">
+        <p>Name: <input class="nam" type="text"></p>
+        <p>Email Address: <input type="email" name="" id="" class="na"></p>
+        </div>
+        <input placeholder="type here..." type="text" class="place">
+        <div class="buttn">
+        <button id="order" style="color: brown;" type="submit"><span></span>Submit</button>
+    </div>
+    </div>
+    <h3 class="tet">Ingredients</h3>
+    <section>
+        <ul class="Ingredients">
+            <li>Arabian oats</li>
+            <li>Processed Cocoa</li>
+            <li>Cinnamon</li>
+            <li>Tumeric</li>
+            <li>Brown sugar</li>
+            <li>Condensed Milk</li>
+            <li>Pure water</li>
+        </ul>
+    </section>
+
+    <h3 class="tet">What are our customers saying?</h3>
+    <section class="test">
+        <div class="testimonials">
+            <div class="dear">
+              <img class="testimg" src="./img/testimonial-1.jpg" alt="">
+            <p>"#1coffee's delivery and services is the best."<i class="bx bxs-like"></i></p>
+            <h4 style="margin: 5px;">Joy</h4>
+        </div>
+        </div>
+        <div class="testimonials">
+            <div class="dear">
+              <img class="testimg" src="./img/ola.jpg" alt="">
+            <p>"#1coffee's service is top-notch."<i class="bx bxs-like"></i></p>
+            <h4 style="margin: 5px;">Ella</h4>
+        </div>
+        </div>
+        <div class="testimonials">
+            <div class="dear">
+              <img class="testimg" src="./img/ch.jpg" alt="">
+            <p>"#1coffee's customer service is number 1."<i class="bx bxs-like"></i></p>
+            <h4 style="margin: 5px;">Ken</h4>
+        </div>
+        </div>
+    </section>
+    </main>
+    <footer class="footer">
+        <div class="foot">
+        <div class="links">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Available Flavors</a>
+        </div>
+            <div class="lin">
+            <a href="">Order a cup of coffee</a>
+            <a href="">Set delivery time</a>
+            <a href="">Ingredients</a>
+            <a href="">Comment</a>
+        </div>
+        <div class="link">
+            <li><a href="">My Account</a></li>
+            <li><a href="">Newsletter</a></li>
+            <li><a href="">Privacy policy</a></li>
+          <li><a href="">Terms of Service</a></li>
+        </div>
+        </div>
+        <p class="socials">
+         <img style="padding: 3px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA0ElEQVRIS2NkoDFgpLH5DIPOAm2gj9uB2BiIRYD4GRAvA+JqXCFBig9EgYY8AGIuNMPWAPmh1LBgEtCQXCwGUc2CM9CgAdmxCIgTgPg/oURCShC9hoY7yMwsIJ5OyHCQPCkWvAGqF4YamgakZ1PDgjCgIVpQg8qANCeUvRlIn4OyjwLp3eRGMigCgwm4tBAoP4GWFgQADd9IrgWNQI32UM1WQJoVyr4FpJ8jxQeIjxWQEsnIqYhqkYzsqlELCGab0SAa+CAi6AJsCkjJaIPTAgBeYyoZrk+g6AAAAABJRU5ErkJggg=="/>
+         <img style="padding: 3px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABkklEQVRIS92VPSiFURjH7yXloywsPgYGkULKZLEYSImiGHyMStlEVpMyMZAJiytZZLKQj0kMwkYoZSKDpITfX++t0+u8x/veepd76te993me8/zP85yPm0zEPJIx509kn0ARLXsL0bZuYmahFj5hGaahHHphAb6Vx2xRLr+voR8uHCJj+JYs/gdsFTAEG2m/KVCN8RaevVUcWpKUeTH5AQs4w74Pq3Dlr6AAwyvkeeWt8Kk2PBrJ+vi+5ahO7R2HNVsFsp1Aq5FAfTyCHTiFRlh0CKzjGzH9ZosKcdTBHpQ4krhc8zgngwQqcdzBC5RmKDDhr9CsIAfnDVRlmFzTGuAyqALZdYY3QRsdddzbFmd7KgYI1KVpiqjwpz2abxPowr4bMbmOcg28++cFPXY6x8MhRb6Ia4NjW3yQgDa8HmZg0CGke6KLZXs6fqfZBPTgtcAUdDqSf+AbhZSrUlOgncA5aA4QNvPodiu53i7n8FdQTLSOag90gB41rfQJtJEHsA3n/yVO+7PvHy1s5aHjYm/RDzGqPxntJF5VAAAAAElFTkSuQmCC"/>
+         <img style="padding: 3px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACQklEQVRIS82VXWjPURjHt7GLLc3b1YbkpSTlZTOJXKC40S5kGEvcyUjUKBe74kZbSZSSslLKS9Jy42WFaZSGi60pL0NWLuRiWLHM56Pzr7+f3+/Mzb926tP5/c9zzvme5znPef7FRQVuxQXev2hcCNTg5RZYC/NhBB5DN9yBnlgUYh7MYuF52Bg2eEL/DH7CYlgCk+E0HIEfaUJZAnOZ3AVlYYOL9G9TNmhirA3eQD30JuekCUwPbpfSr4P+WAiwLYKbMDF8f8ufnyZwlQkbYAW8hBlhwceIkOF6Chdgb0xgKUbj3AytsCB484l+HoxGRI5hOwHroTM3L+mBE46Cl6erh8EY2+qgIyLgfX0Fw7U5S+AhhgmwKkzwEs+E7x30lyMCml4EuyH705IeDDD2CHYGexW9GTIEs+H7GAKmdSPoTarAK0a9rO15Gx3g21y/Blshdg8nsR8CMzBV4DajU6E2cdLr/Dau9g0wB87BIByEz2H+lbBWe6rAcUa95Jlg5uSa93IK9oMhmwLTglHvFDHcX+AG7MkSMM6+WIVa8gRyn9ajs7AwDFg21oBlxHu7BJvgVpaA48/hF1SnCOSGtFXAB3gNJoN39x5W5q9LZlE5Rt30lL6B/2mG8x4YsuXwLiagez6m3aD7VlLLcjsMJ9Qq+b0LjL9pad2yCvzVkh548n1hhunYB5YIS/F9GADHl8FqKAFD44H+qaTukxR4wJgF7m7A9JsE28Aa4ws3jZ3jgzRjXJPZxsVfZuyAY9oK7sFvQv1uGcVPTUoAAAAASUVORK5CYII="/>
+         <img style="padding: 3px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACQklEQVRIS8WVTUhWQRSGP7UEXUlYrTREhETRMgRDiwIJw0VmSFJGG5EWkYKIiyLByIUQGS505SYrF9Gv4KbI8GejJVGUUoIKbhRRyJXZz/PKXBmnb+xCfDjwMHdmzsw5Z86Zc+MiMW5xMT4/smMKMvGsEYohF+I9nv5i/hMMwT346spF8+CKEd5FP2f4Tf8DPsOydchhvg9BOqxBPXTbSlwFeSy+gyk4A9MhY5SD3HPIgAL4EOxzFTxh4TQchNkQh6cg8xTewjNjnBRV+hTMsPDFKLHPT2AgKxUTXZ1kXkM+TBgFJ+jHYB8c8ClYZeEh1FmnJ5vDihyPRhifh70gw1ZA3pRBkk+BgtkJ14yAsucNHIe70AXf4RS0wzc4Btqn9gAugPZtzLkx0KTSrcFsOEo/Ci3QGlhlelnfB7pvWa52H2pA1/gzmgJNdkCT2aBDr4PudclRsIfxItyGm2ath/4S7Aa9kX96cAuZG7AfFhwFqUZBmzHC9kBJ4VVgx0BZMwzNoDu3WzWDR3AWlKJqvXARvAp0RQrkVbNBgq9AgbwMA5AIpXAHFOQSCB1kpakCV2uZqjQdhMKtDkSCNJ235h/zXQ7eNFWxUnlQLttNWXESqkCZ9wL6LcsD2XE+FK+0YMJNUz0y3WnYUmEbEbxqKa/wKZDQe/gI54w3jjNRh9nMvgSVCL14FcyNtl251mtUbVHJnrSO1RVkga5NTTE6AuugB6ok2Wy+P5oOUG1X9oT94aiU/FXed+yXaXv5X98x9+AP5C96GSbc3FEAAAAASUVORK5CYII="/>
+        </p>
+          <p class="pp"> &copy; 2024 #1coffee. All right reserved</p> 
+    </footer>
+
+<!-- Script -->
+<script src="js/main.js"></script>
+</body>
+</html>
